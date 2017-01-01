@@ -17,6 +17,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -850,7 +851,15 @@ Bukkit.getServer().getPluginManager().registerEvents(this, this);
 	
 	
 	
-	
+	@EventHandler
+	public void inv(InventoryCloseEvent event){
+		if(event.getInventory().getName().equals("Troll")){
+		troll.clear();
+		dname.clear();
+		}
+		
+		
+	}
 	
 	
 	
